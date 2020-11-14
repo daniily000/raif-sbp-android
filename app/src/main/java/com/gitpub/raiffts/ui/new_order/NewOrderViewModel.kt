@@ -9,5 +9,5 @@ class NewOrderViewModel : ViewModel() {
     val payerName = MutableLiveData<String>()
     val payerNumber = MutableLiveData<String>()
     val paymentDate = MutableLiveData<LocalDate>()
-
+    val chosenOrder = MutableLiveData<String?>(null)
 }

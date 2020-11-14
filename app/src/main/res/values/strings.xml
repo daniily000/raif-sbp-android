@@ -9,6 +9,8 @@
     <string name="payer_name">ФИО плательщика</string>
     <string name="payment_date">Дата выставления счета</string>
     <string name="payer_number">Номер телефона плательщика</string>
+    <string name="attach_order">Выберите услуги</string>
+    <string name="create_payment">Выставить счет</string>
 
 
 </resources>

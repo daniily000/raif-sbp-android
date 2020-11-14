@@ -14,6 +14,6 @@ import com.gitpub.raiffts.data.entities.Payment
 )
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
-    abstract fun paymentEntityDao(): PaymentDao
-    abstract fun orderEntityDao(): OrderDao
+    abstract fun paymentDao(): PaymentDao
+    abstract fun orderDao(): OrderDao
 }

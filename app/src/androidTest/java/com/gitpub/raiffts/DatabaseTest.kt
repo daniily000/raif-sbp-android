@@ -8,6 +8,7 @@ import com.gitpub.raiffts.data.entities.Order
 import com.gitpub.raiffts.data.entities.Payment
 import org.joda.time.LocalDate
 import org.junit.Assert.assertEquals
+import org.junit.BeforeClass
 import org.junit.Test
 import org.junit.runner.RunWith
 
@@ -18,6 +19,26 @@ import org.junit.runner.RunWith
  */
 @RunWith(AndroidJUnit4::class)
 class DatabaseTest {
+
+
+    companion object {
+
+        lateinit var db: AppDatabase
+
+        @BeforeClass
+        @JvmStatic
+        fun initDb() {
+            db = Room
+                .databaseBuilder(
+                    InstrumentationRegistry.getInstrumentation().targetContext,
+                    AppDatabase::class.java,
+                    "app-db"
+                )
+                .build()
+        }
+    }
+
+
     @Test
     fun useAppContext() {
         // Context of the app under test.
@@ -27,28 +48,39 @@ class DatabaseTest {
 
     @Test
     fun checkDatabase() {
-        val db = Room
-            .databaseBuilder(
-                InstrumentationRegistry.getInstrumentation().targetContext,
-                AppDatabase::class.java,
-                "app-db"
-            )
-            .build()
 
-        println(db.orderEntityDao().getAll())
-        println(db.paymentEntityDao().getAll())
+        println("All orders: ${db.orderDao().getAll()}")
+        println("All payments: ${db.paymentDao().getAll()}")
 
-        val order = Order.create("Khabensky Foundation", 5000)
-        db.orderEntityDao().insertAll(order)
-        val retrievedOrder = db.orderEntityDao().getById(order.id)
+        val order = Order.create(
+            "Khabensky Foundation",
+            5000
+        )
+        val payment = Payment.create(
+            "Lexa s zavoda",
+            "8 800 255 35 35",
+            LocalDate.now(),
+            order
+        )
+
+        db.orderDao().insertAll(order)
+        val retrievedOrder = db.orderDao().getById(order.id)
         assertEquals(order, retrievedOrder)
 
-        val payment = Payment.create("Lexa s zavoda", "8 800 255 35 35", LocalDate.now(), order)
-        db.paymentEntityDao().insertAll(payment)
-        val retrievedPayment = db.paymentEntityDao().getById(payment.id)
+        db.paymentDao().insertAll(payment)
+        val retrievedPayment = db.paymentDao().getById(payment.id)
 
         println("Order: $retrievedOrder")
         println("Payment: $retrievedPayment")
-
     }
+
+    @Test
+    fun clearDatabase() {
+        println("All orders: ${db.orderDao().getAll()}")
+        println("All payments: ${db.paymentDao().getAll()}")
+        db.clearAllTables()
+        println("All orders: ${db.orderDao().getAll()}")
+        println("All payments: ${db.paymentDao().getAll()}")
+    }
+
 }
