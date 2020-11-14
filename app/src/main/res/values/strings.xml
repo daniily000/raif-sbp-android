@@ -5,6 +5,8 @@
     <string name="title_new_bill">Выставить</string>
     <string name="title_history">История</string>
     <string name="title_profile">Профиль</string>
+    <string name="new_order_subheading">Заполните данные</string>
+    <string name="payer_name">ФИО плательщика</string>
 
 
 </resources>

@@ -9,15 +9,26 @@
 
     <TextView
         android:id="@+id/text_new_order"
+        style="@style/Theme.RaifFTS.AppTextAppearance.Subheading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="12dp"
+        android:text="@string/new_order_subheading"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Theme.RaifFTS.Controls.TextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_item_vertical_margin"
+        android:hint="@string/payer_name"
+        app:layout_constraintTop_toBottomOf="@id/text_new_order">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            style="@style/Theme.RaifFTS.Controls.TextInputEditText.Name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
