@@ -11,6 +11,9 @@
     <string name="payer_number">Номер телефона плательщика</string>
     <string name="attach_order">Выберите услуги</string>
     <string name="create_payment">Выставить счет</string>
+    <string name="choose_offers">Выберите услуги</string>
+    <string name="dialog_accept">Ок</string>
+    <string name="dialog_cancel">Отменить</string>
 
 
 </resources>

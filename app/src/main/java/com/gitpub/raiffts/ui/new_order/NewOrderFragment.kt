@@ -8,6 +8,7 @@ import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.gitpub.raiffts.databinding.FragmentNewOrderBinding
+import com.gitpub.raiffts.ui.new_order.view.ChooseOrdersDialog
 import com.gitpub.raiffts.ui.util.applyDatePicker
 import org.joda.time.LocalDate
 
@@ -34,7 +35,7 @@ class NewOrderFragment : Fragment() {
     }
 
     private fun initializeUi() {
-        initializeFields()
+        initializeControls()
         updateControls()
     }
 
@@ -52,7 +53,7 @@ class NewOrderFragment : Fragment() {
         }
     }
 
-    private fun initializeFields() {
+    private fun initializeControls() {
         binding.apply {
             payerName.editText?.addTextChangedListener {
                 newOrderViewModel.payerName.postValue(it.toString())
@@ -62,6 +63,10 @@ class NewOrderFragment : Fragment() {
             }
             paymentDate.applyDatePicker(childFragmentManager) {
                 newOrderViewModel.paymentDate.postValue(LocalDate(it))
+            }
+            attachOrder.setOnClickListener {
+                val dialog = ChooseOrdersDialog.Builder(root.context).build()
+                dialog.show()
             }
         }
     }
