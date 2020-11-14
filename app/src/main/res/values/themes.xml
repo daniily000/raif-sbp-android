@@ -38,6 +38,12 @@
         <item name="hintTextColor">@color/white</item>
     </style>
 
+    <style name="Theme.RaifFTS.Controls.TextInputLayout.InputDate">
+        <item name="endIconDrawable">@drawable/ic_calendar</item>
+        <item name="endIconMode">custom</item>
+        <item name="endIconTint">@color/white</item>
+    </style>
+
     <style name="Theme.RaifFTS.Controls.TextInputEditText">
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/white</item>
@@ -48,5 +54,12 @@
         <item name="android:inputType">textCapWords</item>
     </style>
 
+    <style name="Theme.RaifFTS.Controls.TextInputEditText.Number">
+        <item name="android:inputType">phone</item>
+    </style>
+
+    <style name="Theme.RaifFTS.Controls.TextInputEditText.Date">
+        <item name="android:editable">false</item>
+    </style>
 
 </resources>

@@ -8,7 +8,7 @@
     tools:context=".ui.new_order.NewOrderFragment">
 
     <TextView
-        android:id="@+id/text_new_order"
+        android:id="@+id/new_order_subheading"
         style="@style/Theme.RaifFTS.AppTextAppearance.Subheading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,15 +17,48 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/payer_info"
         style="@style/Theme.RaifFTS.Controls.TextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/default_item_vertical_margin"
         android:hint="@string/payer_name"
-        app:layout_constraintTop_toBottomOf="@id/text_new_order">
+        app:layout_constraintTop_toBottomOf="@id/new_order_subheading">
 
         <androidx.appcompat.widget.AppCompatEditText
             style="@style/Theme.RaifFTS.Controls.TextInputEditText.Name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/payer_number"
+        style="@style/Theme.RaifFTS.Controls.TextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_item_vertical_margin"
+        android:hint="@string/payer_number"
+        app:layout_constraintTop_toBottomOf="@id/payer_info">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            style="@style/Theme.RaifFTS.Controls.TextInputEditText.Name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/payment_date"
+        style="@style/Theme.RaifFTS.Controls.TextInputLayout.InputDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/increased_item_vertical_margin"
+        android:hint="@string/payment_date"
+        app:layout_constraintTop_toBottomOf="@id/payer_number">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            style="@style/Theme.RaifFTS.Controls.TextInputEditText.Date"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 

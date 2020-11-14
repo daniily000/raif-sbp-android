@@ -4,5 +4,6 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="default_content_padding">16dp</dimen>
     <dimen name="default_item_vertical_margin">24dp</dimen>
+    <dimen name="increased_item_vertical_margin">32dp</dimen>
     <dimen name="input_corner_radius">4dp</dimen>
 </resources>

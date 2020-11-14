@@ -7,6 +7,8 @@
     <string name="title_profile">Профиль</string>
     <string name="new_order_subheading">Заполните данные</string>
     <string name="payer_name">ФИО плательщика</string>
+    <string name="payment_date">Дата выставления счета</string>
+    <string name="payer_number">Номер телефона плательщика</string>
 
 
 </resources>
