@@ -1,86 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:animateLayoutChanges="true"
-    android:padding="@dimen/default_content_padding"
-    tools:context=".ui.new_order.NewOrderFragment">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/new_order_subheading"
-        style="@style/Theme.RaifFTS.AppTextAppearance.Subheading"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="@string/new_order_subheading"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:animateLayoutChanges="true"
+        android:padding="@dimen/default_content_padding"
+        tools:context=".ui.new_order.NewOrderFragment">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/payer_name"
-        style="@style/Theme.RaifFTS.Controls.TextInputLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/default_item_vertical_margin"
-        android:hint="@string/payer_name"
-        app:layout_constraintTop_toBottomOf="@id/new_order_subheading">
-
-        <com.google.android.material.textfield.TextInputEditText
-            style="@style/Theme.RaifFTS.Controls.TextInputEditText.Name"
+        <TextView
+            android:id="@+id/new_order_subheading"
+            style="@style/Theme.RaifFTS.AppTextAppearance.Subheading"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/new_order_subheading"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/payer_number"
-        style="@style/Theme.RaifFTS.Controls.TextInputLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/default_item_vertical_margin"
-        android:hint="@string/payer_number"
-        app:layout_constraintTop_toBottomOf="@id/payer_name">
-
-        <com.google.android.material.textfield.TextInputEditText
-            style="@style/Theme.RaifFTS.Controls.TextInputEditText.Name"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/payer_name"
+            style="@style/Theme.RaifFTS.Controls.TextInputLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_item_vertical_margin"
+            android:hint="@string/payer_name"
+            app:layout_constraintTop_toBottomOf="@id/new_order_subheading">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/Theme.RaifFTS.Controls.TextInputEditText.Name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/payment_date"
-        style="@style/Theme.RaifFTS.Controls.TextInputLayout.InputDate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/increased_item_vertical_margin"
-        android:hint="@string/payment_date"
-        app:layout_constraintTop_toBottomOf="@id/payer_number">
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            style="@style/Theme.RaifFTS.Controls.TextInputEditText.Date"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/payer_number"
+            style="@style/Theme.RaifFTS.Controls.TextInputLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_item_vertical_margin"
+            android:hint="@string/payer_number"
+            app:layout_constraintTop_toBottomOf="@id/payer_name">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/Theme.RaifFTS.Controls.TextInputEditText.Phone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/attach_order"
-        style="@style/Theme.RaifFTS.Controls.TextButton.AttachPayment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/increased_item_vertical_margin"
-        android:text="@string/attach_order"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/payment_date" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:id="@+id/create_payment"
-        style="@style/Theme.RaifFTS.Controls.Button.Primary"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/create_payment"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/payment_date"
+            style="@style/Theme.RaifFTS.Controls.TextInputLayout.InputDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/increased_item_vertical_margin"
+            android:hint="@string/payment_date"
+            app:layout_constraintTop_toBottomOf="@id/payer_number">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/Theme.RaifFTS.Controls.TextInputEditText.Date"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/chosen_orders_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/increased_item_vertical_margin"
+            android:background="@drawable/background_round_content"
+            android:padding="@dimen/small_content_padding"
+            app:layout_constraintTop_toBottomOf="@id/payment_date">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/chosen_orders_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/reattach_orders"
+                style="@style/Theme.RaifFTS.Controls.TextButton.AttachPayment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_item_vertical_margin"
+                android:text="@string/reattach_order"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/chosen_orders_list" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/attach_orders"
+            style="@style/Theme.RaifFTS.Controls.TextButton.AttachPayment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/increased_item_vertical_margin"
+            android:text="@string/attach_order"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/payment_date" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/orders_barrier"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="attach_orders,chosen_orders_container" />
+
+        <Button
+            android:id="@+id/create_payment"
+            style="@style/Theme.RaifFTS.Controls.Button.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_item_vertical_margin"
+            android:text="@string/create_payment"
+            app:layout_constraintTop_toBottomOf="@id/orders_barrier" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

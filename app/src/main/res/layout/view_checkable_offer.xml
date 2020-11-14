@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:buttonTint="@color/checkbox_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/offer_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="32dp"
+        android:textColor="@color/white"
+        android:textSize="14dp"
+        app:layout_constraintStart_toEndOf="@id/checkbox"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Русский язык: Подготовка к ЕГЭ, Русский язык: Подготовка к ЕГЭ, Русский язык: Подготовка к ЕГЭ, Русский язык: Подготовка к ЕГЭ, " />
+
+    <TextView
+        android:id="@+id/offer_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:paddingEnd="32dp"
+        android:textColor="@color/white_a75"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="@id/offer_title"
+        app:layout_constraintTop_toBottomOf="@id/offer_title"
+        tools:text="1500000000000000000000000000015000000000000000000000000000150000000000000000000000000001500000000000000000000000000015000000000000000000000000000 рублей блять" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

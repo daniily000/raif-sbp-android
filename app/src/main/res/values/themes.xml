@@ -76,7 +76,7 @@
         <item name="android:inputType">textCapWords</item>
     </style>
 
-    <style name="Theme.RaifFTS.Controls.TextInputEditText.Number">
+    <style name="Theme.RaifFTS.Controls.TextInputEditText.Phone">
         <item name="android:inputType">phone</item>
     </style>
 

@@ -14,6 +14,8 @@
     <string name="choose_offers">Выберите услуги</string>
     <string name="dialog_accept">Ок</string>
     <string name="dialog_cancel">Отменить</string>
+    <string name="currency_template">%s руб.</string>
+    <string name="reattach_order">Изменить услуги</string>
 
 
 </resources>
