@@ -18,9 +18,7 @@ class CheckableOfferAdapterDelegate : AdapterDelegate<List<BaseItem>>() {
         items[position] is CheckableOfferItem
 
     override fun onCreateViewHolder(parent: ViewGroup): RecyclerView.ViewHolder =
-        ViewCheckableOfferBinding.inflate(LayoutInflater.from(parent.context)).let {
-            ViewHolder(it)
-        }
+        ViewHolder(ViewCheckableOfferBinding.inflate(LayoutInflater.from(parent.context)))
 
     override fun onBindViewHolder(
         items: List<BaseItem>,

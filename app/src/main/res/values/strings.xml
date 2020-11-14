@@ -16,6 +16,8 @@
     <string name="dialog_cancel">Отменить</string>
     <string name="currency_template">%s руб.</string>
     <string name="reattach_order">Изменить услуги</string>
-
+    <string name="share_payment_link">Отправить ссылки для оплаты</string>
+    <string name="retry">Повторить</string>
+    <string name="error_check_connection_description">Не удалось выполнить запрос, повторите попытку позднее</string>
 
 </resources>

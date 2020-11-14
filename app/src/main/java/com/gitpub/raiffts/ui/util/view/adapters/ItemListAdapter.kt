@@ -8,12 +8,13 @@ import com.hannesdorfmann.adapterdelegates4.AdapterDelegatesManager
 
 
 const val VIEW_TYPE_CHECKABLE_OFFERS = 0x00000000
+const val VIEW_TYPE_TEXT = 0x00000001
 
 class ItemListAdapter(items: List<BaseItem> = listOf()) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val mItemList = mutableListOf<BaseItem>().apply {
-        items?.forEach { this.add(it) }
+        items.forEach { this.add(it) }
     }
     private val mDelegatesManager = AdapterDelegatesManager<List<BaseItem>>()
 

@@ -8,8 +8,10 @@ import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.gitpub.raiffts.data.entities.Order
+import com.gitpub.raiffts.data.entities.Payment
 import com.gitpub.raiffts.data.model.CheckableOfferItem
 import com.gitpub.raiffts.databinding.FragmentNewOrderBinding
 import com.gitpub.raiffts.service.DataService
@@ -73,6 +75,9 @@ class NewOrderFragment : Fragment(), DIAware {
             chosenOrders.observe(viewLifecycleOwner) {
                 updateForm()
             }
+            submitted.observe(viewLifecycleOwner) {
+                navigateFurther(it)
+            }
         }
     }
 
@@ -104,6 +109,9 @@ class NewOrderFragment : Fragment(), DIAware {
             chosenOrdersList.apply {
                 adapter = chosenOrdersAdapter
                 layoutManager = LinearLayoutManager(context)
+            }
+            createPayment.setOnClickListener {
+                newOrderViewModel.submit()
             }
         }
     }
@@ -141,5 +149,14 @@ class NewOrderFragment : Fragment(), DIAware {
             chosenOrdersAdapter.setItemList(checkableOrders)
 
         }
+    }
+
+    private fun navigateFurther(payments: Array<Payment>) {
+        val action =
+            NewOrderFragmentDirections.actionNavigationNewOrderToViewPaymentFragment(payments)
+        findNavController().navigate(action)
+//        val bundle = Bundle()
+//        bundle.putSerializable("payments", payments)
+//        findNavController().navigate(R.id.viewPaymentFragment, bundle)
     }
 }

@@ -21,12 +21,26 @@
         android:id="@+id/navigation_new_order"
         android:name="com.gitpub.raiffts.ui.new_order.NewOrderFragment"
         android:label="@string/title_new_order"
-        tools:layout="@layout/fragment_new_order" />
+        tools:layout="@layout/fragment_new_order">
+        <action
+            android:id="@+id/action_navigation_new_order_to_viewPaymentFragment"
+            app:destination="@id/viewPaymentFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_profile"
         android:name="com.gitpub.raiffts.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/viewPaymentFragment"
+        android:name="com.gitpub.raiffts.ui.new_order.view_order.ViewPaymentFragment"
+        android:label="ViewPaymentFragment"
+        tools:layout="@layout/fragment_view_payment">
+        <argument
+            android:name="payments"
+            app:argType="com.gitpub.raiffts.data.entities.Payment[]" />
+    </fragment>
 
 </navigation>

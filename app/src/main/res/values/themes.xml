@@ -21,6 +21,31 @@
         <item name="android:textColor">@color/white</item>
     </style>
 
+    <style name="Theme.RaifFTS.AppTextAppearance.Solid">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Theme.RaifFTS.AppTextAppearance.Solid.Large">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="Theme.RaifFTS.AppTextAppearance.Solid.Smaller">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Theme.RaifFTS.AppTextAppearance.Solid.Smaller.SlightlyMuted">
+        <item name="android:textColor">@color/white_a75</item>
+    </style>
+
+    <style name="Theme.RaifFTS.AppTextAppearance.Solid.Tiny">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Theme.RaifFTS.AppTextAppearance.Solid.Tiny.Muted">
+        <item name="android:textColor">@color/white_a50</item>
+    </style>
+
     <style name="Theme.RaifFTS.AppTextAppearance.Hint">
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/white_a25</item>
@@ -86,15 +111,21 @@
 
     <style name="Theme.RaifFTS.Controls.TextButton">
         <item name="android:padding">8dp</item>
-        <item name="android:textColor">@color/colorBrand</item>
+        <item name="android:textColor">@color/text_button_color</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Theme.RaifFTS.Controls.TextButton.ShareLink">
+        <item name="android:drawablePadding">8dp</item>
+        <item name="drawableStartCompat">@drawable/ic_browser</item>
+        <item name="drawableTint">@color/text_button_color</item>
     </style>
 
     <style name="Theme.RaifFTS.Controls.TextButton.AttachPayment">
         <item name="android:drawablePadding">8dp</item>
         <item name="drawableStartCompat">@drawable/ic_offers</item>
-        <item name="drawableTint">@color/colorBrand</item>
+        <item name="drawableTint">@color/text_button_color</item>
     </style>
 
 </resources>
