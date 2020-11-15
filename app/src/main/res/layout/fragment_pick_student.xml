@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/student_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorDark3"
+        android:padding="@dimen/default_content_padding"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/student_1_name"
+            style="@style/Theme.RaifFTS.AppTextAppearance.Solid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Леха с завода"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/student_1_number"
+            style="@style/Theme.RaifFTS.AppTextAppearance.Solid.Smaller"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="8 800 555 35 35"
+            app:layout_constraintTop_toBottomOf="@id/student_1_name" />
+
+        <TextView
+            android:id="@+id/student_1_order_name"
+            style="@style/Theme.RaifFTS.AppTextAppearance.Solid.Tiny.Muted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="ФОНД ХАБЕНСКОГО"
+            app:layout_constraintTop_toBottomOf="@id/student_1_number" />
+
+        <TextView
+            android:id="@+id/student_1_order_price"
+            style="@style/Theme.RaifFTS.AppTextAppearance.Solid.Tiny.Muted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="1 руб"
+            app:layout_constraintTop_toBottomOf="@id/student_1_order_name" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/divider_1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorDark2"
+        app:layout_constraintTop_toBottomOf="@id/student_1" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/student_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorDark3"
+        android:padding="@dimen/default_content_padding"
+        app:layout_constraintTop_toBottomOf="@id/divider_1">
+
+        <TextView
+            android:id="@+id/student_2_name"
+            style="@style/Theme.RaifFTS.AppTextAppearance.Solid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Моя маман"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/student_2_number"
+            style="@style/Theme.RaifFTS.AppTextAppearance.Solid.Smaller"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="+7 902 252 06 39"
+            app:layout_constraintTop_toBottomOf="@id/student_2_name" />
+
+        <TextView
+            android:id="@+id/student_2_order_name"
+            style="@style/Theme.RaifFTS.AppTextAppearance.Solid.Tiny.Muted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="ФОНД ХАБЕНСКОГО"
+            app:layout_constraintTop_toBottomOf="@id/student_2_number" />
+
+        <TextView
+            android:id="@+id/student_2_order_price"
+            style="@style/Theme.RaifFTS.AppTextAppearance.Solid.Tiny.Muted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="5 руб"
+            app:layout_constraintTop_toBottomOf="@id/student_2_order_name" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/divider_2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorDark2"
+        app:layout_constraintTop_toBottomOf="@id/student_2" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/student_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorDark3"
+        android:padding="@dimen/default_content_padding"
+        app:layout_constraintTop_toBottomOf="@id/divider_2">
+
+        <TextView
+            android:id="@+id/student_3_name"
+            style="@style/Theme.RaifFTS.AppTextAppearance.Solid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Красивая Лиля"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/student_3_number"
+            style="@style/Theme.RaifFTS.AppTextAppearance.Solid.Smaller"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="+7 963 343 25 61"
+            app:layout_constraintTop_toBottomOf="@id/student_3_name" />
+
+        <TextView
+            android:id="@+id/student_3_order_name"
+            style="@style/Theme.RaifFTS.AppTextAppearance.Solid.Tiny.Muted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="ФОНД ХАБЕНСКОГО"
+            app:layout_constraintTop_toBottomOf="@id/student_3_number" />
+
+        <TextView
+            android:id="@+id/student_3_order_price"
+            style="@style/Theme.RaifFTS.AppTextAppearance.Solid.Tiny.Muted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="10 руб"
+            app:layout_constraintTop_toBottomOf="@id/student_3_order_name" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

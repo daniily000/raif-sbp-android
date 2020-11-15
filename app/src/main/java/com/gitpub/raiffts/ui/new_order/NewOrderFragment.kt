@@ -43,6 +43,8 @@ class NewOrderFragment : Fragment(), DIAware {
 
     private var mCompositeDisposable = CompositeDisposable()
 
+    private val orderForm = ChosenOrderForm.payments
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -63,6 +65,7 @@ class NewOrderFragment : Fragment(), DIAware {
 
     override fun onStop() {
         super.onStop()
+        cacheData()
         unsubscribeFromUpdates()
     }
 
@@ -77,6 +80,7 @@ class NewOrderFragment : Fragment(), DIAware {
     }
 
     private fun initializeViewModel() {
+        newOrderViewModel.consumeForm(orderForm)
         newOrderViewModel.apply {
             payerName.observe(viewLifecycleOwner) {
                 updateForm()
@@ -101,6 +105,10 @@ class NewOrderFragment : Fragment(), DIAware {
     private fun unsubscribeFromUpdates() {
         mCompositeDisposable.dispose()
         mCompositeDisposable = CompositeDisposable()
+    }
+
+    private fun cacheData() {
+        newOrderViewModel.cacheData()
     }
 
     private fun initializeForm() {
@@ -143,9 +151,9 @@ class NewOrderFragment : Fragment(), DIAware {
     }
 
     private fun restoreForm() {
-        val payerName = newOrderViewModel.payerName.value.orEmpty()
-        val payerNumber = newOrderViewModel.payerNumber.value.orEmpty()
-        val paymentDate = newOrderViewModel.paymentDate.value
+        val payerName = newOrderViewModel.payerNameCached.orEmpty()
+        val payerNumber = newOrderViewModel.payerNumberCached.orEmpty()
+        val paymentDate = newOrderViewModel.paymentDateCached
 
         binding.apply {
             this.payerName.editText?.setText(payerName)
@@ -186,8 +194,8 @@ class NewOrderFragment : Fragment(), DIAware {
     }
 
     private fun navigateFurther(payments: Array<Payment>) {
-        val action =
-            NewOrderFragmentDirections.actionNavigationNewOrderToViewPaymentFragment(payments)
+        val action = NewOrderContainerFragmentDirections
+            .actionNavigationNewOrderToViewPaymentFragment(payments)
         findNavController().navigate(action)
 //        val bundle = Bundle()
 //        bundle.putSerializable("payments", payments)

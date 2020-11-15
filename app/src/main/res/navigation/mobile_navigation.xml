@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_new_order">
+    app:startDestination="@+id/newOrderContainerFragment">
 
     <fragment
         android:id="@+id/navigation_offers"
@@ -22,13 +22,6 @@
         android:name="com.gitpub.raiffts.ui.new_order.NewOrderFragment"
         android:label="@string/title_new_order"
         tools:layout="@layout/fragment_new_order">
-        <action
-            android:id="@+id/action_navigation_new_order_to_viewPaymentFragment"
-            app:destination="@id/viewPaymentFragment"
-            app:enterAnim="@anim/slide_in"
-            app:exitAnim="@anim/fade_out"
-            app:popEnterAnim="@anim/fade_in"
-            app:popExitAnim="@anim/slide_out" />
     </fragment>
 
     <fragment
@@ -45,6 +38,21 @@
         <argument
             android:name="payments"
             app:argType="com.gitpub.raiffts.data.entities.Payment[]" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/newOrderContainerFragment"
+        android:name="com.gitpub.raiffts.ui.new_order.NewOrderContainerFragment"
+        android:label="@string/title_new_order"
+        tools:layout="@layout/fragment_new_order_container">
+
+        <action
+            android:id="@+id/action_navigation_new_order_to_viewPaymentFragment"
+            app:destination="@id/viewPaymentFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
     </fragment>
 
 </navigation>

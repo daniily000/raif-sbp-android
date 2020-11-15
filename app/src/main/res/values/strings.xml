@@ -6,9 +6,9 @@
     <string name="title_history">История</string>
     <string name="title_profile">Профиль</string>
     <string name="new_order_subheading">Заполните данные</string>
-    <string name="payer_name">ФИО плательщика</string>
+    <string name="payer_name">ФИО ученика</string>
     <string name="payment_date">Дата выставления счета</string>
-    <string name="payer_number">Номер телефона плательщика</string>
+    <string name="payer_number">Номер телефона ученика</string>
     <string name="attach_order">Выберите услуги</string>
     <string name="create_payment">Выставить счет</string>
     <string name="choose_offers">Выберите услуги</string>
