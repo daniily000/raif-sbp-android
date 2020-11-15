@@ -43,7 +43,6 @@ class NewOrderFragment : Fragment(), DIAware {
 
     private var mCompositeDisposable = CompositeDisposable()
 
-    private val orderForm = ChosenOrderForm.payments
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -57,14 +56,15 @@ class NewOrderFragment : Fragment(), DIAware {
         initializeViewModel()
     }
 
-    override fun onStart() {
-        super.onStart()
+    override fun onResume() {
+        super.onResume()
+        newOrderViewModel.consumeForm(ChosenOrderForm.payments)
         restoreForm()
         mCompositeDisposable.add(subscribeToUpdates())
     }
 
-    override fun onStop() {
-        super.onStop()
+    override fun onPause() {
+        super.onPause()
         cacheData()
         unsubscribeFromUpdates()
     }
@@ -80,7 +80,6 @@ class NewOrderFragment : Fragment(), DIAware {
     }
 
     private fun initializeViewModel() {
-        newOrderViewModel.consumeForm(orderForm)
         newOrderViewModel.apply {
             payerName.observe(viewLifecycleOwner) {
                 updateForm()

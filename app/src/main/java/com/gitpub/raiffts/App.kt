@@ -12,7 +12,7 @@ import org.kodein.di.singleton
 class App : Application(), DIAware {
 
     private val dataService = MockDataService()
-    private val environment = SandboxEnvironment()
+    private val environment = ProductionEnvironment()
     private val paymentService = PaymentService(environment, dataService)
 
     override val di by DI.lazy {
