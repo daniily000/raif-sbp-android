@@ -73,6 +73,7 @@ class ViewPaymentFragment : Fragment() {
                 root.context.getString(R.string.currency_template),
                 paymentPrice.toString()
             )
+
             shareLinks.setOnClickListener {
                 val links = viewPaymentViewModel.links.value ?: return@setOnClickListener
                 val sendIntent: Intent = Intent().apply {

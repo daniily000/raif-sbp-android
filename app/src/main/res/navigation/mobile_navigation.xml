@@ -24,7 +24,11 @@
         tools:layout="@layout/fragment_new_order">
         <action
             android:id="@+id/action_navigation_new_order_to_viewPaymentFragment"
-            app:destination="@id/viewPaymentFragment" />
+            app:destination="@id/viewPaymentFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
     </fragment>
 
     <fragment
@@ -36,7 +40,7 @@
     <fragment
         android:id="@+id/viewPaymentFragment"
         android:name="com.gitpub.raiffts.ui.new_order.view_order.ViewPaymentFragment"
-        android:label="ViewPaymentFragment"
+        android:label="@string/title_order_created"
         tools:layout="@layout/fragment_view_payment">
         <argument
             android:name="payments"

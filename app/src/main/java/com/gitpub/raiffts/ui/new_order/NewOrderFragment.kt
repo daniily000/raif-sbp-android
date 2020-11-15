@@ -20,6 +20,8 @@ import com.gitpub.raiffts.ui.new_order.view.adapters.CheckableOfferAdapterDelega
 import com.gitpub.raiffts.ui.util.applyDatePicker
 import com.gitpub.raiffts.ui.util.view.adapters.ItemListAdapter
 import com.gitpub.raiffts.ui.util.view.adapters.VIEW_TYPE_CHECKABLE_OFFERS
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.disposables.CompositeDisposable
 import org.joda.time.LocalDate
 import org.kodein.di.DIAware
 import org.kodein.di.android.x.di
@@ -39,6 +41,8 @@ class NewOrderFragment : Fragment(), DIAware {
     private val newOrderViewModel: NewOrderViewModel by activityViewModels()
     private lateinit var binding: FragmentNewOrderBinding
 
+    private var mCompositeDisposable = CompositeDisposable()
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -49,6 +53,17 @@ class NewOrderFragment : Fragment(), DIAware {
         super.onViewCreated(view, savedInstanceState)
         initializeUi()
         initializeViewModel()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        restoreForm()
+        mCompositeDisposable.add(subscribeToUpdates())
+    }
+
+    override fun onStop() {
+        super.onStop()
+        unsubscribeFromUpdates()
     }
 
     private fun initializeViewBinding(inflater: LayoutInflater, container: ViewGroup?): View {
@@ -75,10 +90,17 @@ class NewOrderFragment : Fragment(), DIAware {
             chosenOrders.observe(viewLifecycleOwner) {
                 updateForm()
             }
-            submitted.observe(viewLifecycleOwner) {
-                navigateFurther(it)
-            }
         }
+    }
+
+    private fun subscribeToUpdates() =
+        newOrderViewModel.submitted.observeOn(AndroidSchedulers.mainThread()).subscribe {
+            navigateFurther(it)
+        }
+
+    private fun unsubscribeFromUpdates() {
+        mCompositeDisposable.dispose()
+        mCompositeDisposable = CompositeDisposable()
     }
 
     private fun initializeForm() {
@@ -118,6 +140,18 @@ class NewOrderFragment : Fragment(), DIAware {
 
     private fun updateOrders(orders: List<Order>) {
         newOrderViewModel.chosenOrders.postValue(orders)
+    }
+
+    private fun restoreForm() {
+        val payerName = newOrderViewModel.payerName.value.orEmpty()
+        val payerNumber = newOrderViewModel.payerNumber.value.orEmpty()
+        val paymentDate = newOrderViewModel.paymentDate.value
+
+        binding.apply {
+            this.payerName.editText?.setText(payerName)
+            this.payerNumber.editText?.setText(payerNumber)
+            this.paymentDate.editText?.setText(paymentDate?.toString("dd MMM yyyy"))
+        }
     }
 
     private fun updateForm() {

@@ -19,5 +19,6 @@
     <string name="share_payment_link">Отправить ссылки для оплаты</string>
     <string name="retry">Повторить</string>
     <string name="error_check_connection_description">Не удалось выполнить запрос, повторите попытку позднее</string>
+    <string name="title_order_created">Заказ успешно сформирован</string>
 
 </resources>

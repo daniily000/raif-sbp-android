@@ -8,6 +8,14 @@ class MockDataService : DataService {
         Order.create(
             "Фонд Хабенского",
             1
-        )
+        ),
+        Order.create(
+            "Фонд Хабенского",
+            5
+        ),
+        Order.create(
+            "Фонд Хабенского",
+            10
+        ),
     )
 }
