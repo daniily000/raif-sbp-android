@@ -75,10 +75,10 @@ class ViewPaymentFragment : Fragment() {
             )
 
             shareLinks.setOnClickListener {
-                val links = viewPaymentViewModel.links.value ?: return@setOnClickListener
+                val savedPayment = viewPaymentViewModel.links.value ?: return@setOnClickListener
                 val sendIntent: Intent = Intent().apply {
                     action = Intent.ACTION_SEND
-                    putExtra(Intent.EXTRA_TEXT, links.createMessage())
+                    putExtra(Intent.EXTRA_TEXT, savedPayment.links.createMessage())
                     type = "text/plain"
                 }
                 val shareIntent = Intent.createChooser(sendIntent, null)

@@ -10,4 +10,5 @@
     <dimen name="button_corner_radius">8dp</dimen>
     <dimen name="form_corner_radius">12dp</dimen>
     <dimen name="small_item_vertical_margin">8dp</dimen>
+    <dimen name="very_big_value">32767dp</dimen>
 </resources>

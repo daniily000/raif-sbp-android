@@ -28,5 +28,6 @@ class TextAdapterDelegate : AdapterDelegate<List<BaseItem>>() {
         }
     }
 
-    class ViewHolder(val binding: ViewTextItemBinding) : RecyclerView.ViewHolder(binding.root)
+    private class ViewHolder(val binding: ViewTextItemBinding) :
+        RecyclerView.ViewHolder(binding.root)
 }

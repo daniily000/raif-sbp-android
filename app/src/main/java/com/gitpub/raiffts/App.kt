@@ -13,7 +13,7 @@ class App : Application(), DIAware {
 
     private val dataService = MockDataService()
     private val environment = SandboxEnvironment()
-    private val paymentService = PaymentService(environment)
+    private val paymentService = PaymentService(environment, dataService)
 
     override val di by DI.lazy {
 //        val db = Room

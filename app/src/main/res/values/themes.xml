@@ -15,6 +15,14 @@
 
     <style name="Theme.RaifFTS.AppTextAppearance" />
 
+    <style name="Theme.RaifFTS.AppTextAppearance.PaymentStatus">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/colorDark1</item>
+        <item name="android:background">@drawable/background_round</item>
+        <item name="background">@drawable/background_round</item>
+    </style>
+
+
     <style name="Theme.RaifFTS.AppTextAppearance.Subheading">
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">18sp</item>

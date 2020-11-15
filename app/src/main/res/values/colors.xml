@@ -17,5 +17,6 @@
     <color name="colorDark3">#455A64</color>
     <color name="colorDark4">#546E7A</color>
     <color name="colorDark5">#78909C</color>
+    <color name="colorOk">#27AE60</color>
 
 </resources>
