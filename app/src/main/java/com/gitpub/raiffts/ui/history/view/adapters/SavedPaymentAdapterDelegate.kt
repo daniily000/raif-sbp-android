@@ -70,7 +70,17 @@ class SavedPaymentAdapterDelegate(private val paymentService: PaymentService) :
                                 )
                             )
                         }
-                    null -> TODO()
+                    null ->
+                        paymentStatus.apply {
+                            setText(R.string.payment_error)
+                            backgroundTintList = ColorStateList.valueOf(
+                                ResourcesCompat.getColor(
+                                    resources,
+                                    R.color.colorError,
+                                    null
+                                )
+                            )
+                        }
                 }
             }
         }

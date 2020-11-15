@@ -22,5 +22,6 @@
     <string name="title_order_created">Заказ успешно сформирован</string>
     <string name="not_paid_yet">Ожидается оплата</string>
     <string name="payment_complete">Оплачено</string>
+    <string name="payment_error">Ошибка</string>
 
 </resources>
